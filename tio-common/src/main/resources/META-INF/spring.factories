@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.sven.tio.common.configuration.TioCommonAutoConfiguration
