@@ -6,3 +6,6 @@ tio:
   server: 127.0.0.1
   port: 6789
   timeout: 5000
+
+logging:
+  config: classpath:logback.xml
