@@ -3,6 +3,7 @@ package com.sven.tio.server.tcp.listener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.tio.core.ChannelContext;
+import org.tio.core.Tio;
 import org.tio.core.intf.Packet;
 import org.tio.server.intf.TioServerListener;
 
@@ -40,11 +41,13 @@ public class MessageTioServerListener implements TioServerListener {
 
 	@Override
 	public void onAfterHandled(ChannelContext channelContext, Packet packet, long cost) throws Exception {
-
+		log.info("消息处理完毕, 耗时: {}ms", cost);
 	}
 
 	@Override
 	public void onBeforeClose(ChannelContext channelContext, Throwable throwable, String remark, boolean isRemove) throws Exception {
+		Tio.unbindUser(channelContext);
+		Tio.unbindGroup(channelContext);
 		log.info("客户端节点关闭: {}, remark: {}, isRemove: {}", channelContext.getClientNode(), remark, isRemove);
 	}
 }

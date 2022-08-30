@@ -1,6 +1,8 @@
 spring:
   application:
     name: tio-server
+  main:
+    web-application-type: none
 
 tio:
   server: 127.0.0.1

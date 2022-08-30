@@ -21,7 +21,7 @@
     <name>tio-demo</name>
     <description>tio-demo</description>
     <properties>
-        <java.version>17</java.version>
+        <java.version>19</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -31,7 +31,13 @@
         <dependency>
             <groupId>org.t-io</groupId>
             <artifactId>tio-core</artifactId>
-            <version>3.8.1.v20220401-RELEASE</version>
+            <version>3.8.2.v20220628-RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alibaba</groupId>
+                    <artifactId>fastjson</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
